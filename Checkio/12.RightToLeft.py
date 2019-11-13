@@ -13,13 +13,18 @@ left_join(("brightness wright",)) == "bleftness wleft"
 left_join(("enough", "jokes")) == "enough,jokes"  '''
 
 phrases = ("left", "right", "left", "stop")
+#phrases = ("bright aright", "ok")
+#phrases = ("brightness wright",)
+#phrases = ("enough", "jokes")
 
 def left_join(phrases):
     str1 = ""
     for i in phrases:
         str1 += i + ","
-        str1 += i
+    return str1[0:-1].replace("right", "left") # delete last comma then replace
+print(left_join(phrases))
 
-
-    return str1
+# 2nd solution
+def left_join(phrases):
+    return ",".join(phrases).replace("right", "left")
 print(left_join(phrases))
