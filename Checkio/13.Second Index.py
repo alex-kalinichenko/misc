@@ -14,8 +14,15 @@ second_index("sims", "s") == 3
 second_index("find the river", "e") == 12
 second_index("hi", " ") is None  '''
 
-str1 = ("sims", "s")
+text, symbol = "find the river", "e"
 
-def second_index(text: str, symbol: str) -> [int, None]:
-    list = str1.split
-    index = str1.find()
+
+def second_index(text, symbol):
+    if text.count(symbol) < 2:
+        return None
+    else:
+        first_index = text.find(symbol)
+    return text.find(symbol, first_index + 1)
+
+
+print(second_index(text, symbol))
