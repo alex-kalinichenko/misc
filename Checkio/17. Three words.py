@@ -14,11 +14,16 @@ checkio("Hi") == False                    '''
 def checkio(words: str) -> bool:
     # check if succession of 3 words occurs
     word_list = words.split()
-    print(word_list)
-    new_word_list = []
-    for i in word_list:
-        print(i)
-        if i == i.isalpha():
-            new_word_list = word_list.append(i)
-    return new_word_list
-print(checkio("Hello World hello"))
+    count = 0
+    for i in range(0, len(word_list)):
+        if word_list[i].isalpha():  # if word_list[i].isalpha() == True:
+            count += 1
+        else:
+            count = 0
+        print("No of i:", i, ",", word_list[i], "Count:", count) # debug
+        if count == 3:
+            return True
+    return False
+
+
+print(checkio("He is 12 key long feet 123 man"))
