@@ -5,6 +5,11 @@ data as the second one
 Input: int and list of dicts. Each dicts has two keys "name" and "price"
 Output: the same as the second Input argument.
 
+bigger_price(1, [
+    {"name": "pen", "price": 5},
+    {"name": "whiteboard", "price": 170}
+]) == [{"name": "whiteboard", "price": 170}]
+
 bigger_price(2, [
     {"name": "bread", "price": 100},
     {"name": "wine", "price": 138},
@@ -13,19 +18,28 @@ bigger_price(2, [
 ]) == [
     {"name": "wine", "price": 138},
     {"name": "bread", "price": 100}
-]
-
-bigger_price(1, [
-    {"name": "pen", "price": 5},
-    {"name": "whiteboard", "price": 170}
-]) == [{"name": "whiteboard", "price": 170}]    '''
-
+]                                             '''
 
 def bigger_price(limit: int, data: list) -> list:
+    print(limit)
+    print(data)
+    max_price = 0
+    for i in data:
+        print(i)
+        #print({}.keys())
+        #print({}.get("key", "No key"))
+        #print({}.get("value", "No value"))
+        for k, v in i.items():
+            print("k =", k)
+            print("v =", v)
+            print("Is it all?")
+            if v == int():
+                #max_price = v
 
 
+    return max_price = v
 
-    return
+
 print(bigger_price(2, [
     {"name": "bread", "price": 100},
     {"name": "wine", "price": 138},
