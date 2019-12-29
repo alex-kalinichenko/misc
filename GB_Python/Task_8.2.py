@@ -3,6 +3,20 @@
 # пользователем нуля в качестве делителя программа должна корректно обработать
 # эту ситуацию и не завершиться с ошибкой.
 
-class error_div_zero:
-    def function
 
+class ZeroDiv(Exception):
+    def __init__(self, txt):
+        self.txt = txt
+
+
+try:
+    num_1 = int(input("Введите делимое: "))
+    num_2 = int(input("Введите делитель: "))
+    if num_2 == 0:
+        raise ZeroDiv("На ноль делить нельзя!")
+except ValueError:
+    print("Вы ввели не число")
+except ZeroDiv as err:
+    print(err)
+else:
+    print(f"Частное от деления = {num_1 / num_2}")
