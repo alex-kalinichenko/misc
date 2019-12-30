@@ -11,6 +11,7 @@
 # должен не позволить пользователю ввести текст (не число) и отобразить соответствующее
 # сообщение. При этом работа скрипта не должна завершаться.
 
+
 class NumCheck(Exception):
     def __init__(self, text):
         self.text = text
@@ -18,24 +19,20 @@ class NumCheck(Exception):
 
 el_list = []
 while True:
-
-    # if el == 'stop':
-    #     print(f'Работа скрипта остановлена. Сформирован список: {el_list}')
-    #     break
     try:
         el = input('Введите элемент списка (число): ')
-        if int(el) != True:
-            raise NumCheck('Введено не число')
-        # # код который может вызвать исключительную ситуацию
-    except el == 'stop':
-        print("Работа скрипта остановлена")
-        # что делать если возникла исключительная ситуация
-    except NumCheck:
-        print("Вы ввели не число")
+        if el == 'stop':
+            print(f'Работа скрипта остановлена. Сформирован список: {el_list}')
+            break
+        elif not el.isdigit():
+            raise NumCheck("Вы ввели не число")
+        # код который может вызвать исключительную ситуацию
+    except NumCheck as err:
+        print(err)
         # что делать если возникла исключительная ситуация
     else:
+        el = int(el)
         el_list.append(el)
         # что делать если ошибок не было
     #finally:
         # выполняется всегда
-
