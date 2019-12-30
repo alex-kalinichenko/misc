@@ -13,8 +13,9 @@
 
 
 class NumCheck(Exception):
-    def __init__(self, text):
-        self.text = text
+    # def __init__(self, text):
+    # self.text = text
+    pass
 
 
 el_list = []
@@ -34,5 +35,5 @@ while True:
         el = int(el)
         el_list.append(el)
         # что делать если ошибок не было
-    #finally:
-        # выполняется всегда
+    # finally:
+    # выполняется всегда

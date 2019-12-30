@@ -1,9 +1,4 @@
-date = "10-05-1915"
-
-number, month, year = date.split('-')
-
-print(number, month, year)
-
-
-
-f'День - ok' if 1 <= int(number) <= 31 else f'День не прошёл валидацию'
+while True:
+    in_out = input('1 - для приёма оргтехники на склад\n2 - для поставки в компанию\nВвод:')
+    if in_out == '1' or in_out == '2':
+        eq_type = input('1 - принтер\n2 - сканер\n3 - телефон:')

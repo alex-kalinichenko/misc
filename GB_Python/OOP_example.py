@@ -38,7 +38,7 @@ class Person:
 p = Person('Swaroop')
 p.say_hi()
 
-print("=============")
+print("=============")  # ======================================================
 
 
 class Robot:
@@ -106,7 +106,7 @@ del droid1
 del droid2
 Robot.howMany()
 
-print(f'\n', 30 * '=', f'\n')
+print(f'\n', 30 * '=', f'\n')   # ===================================================
 
 # ДЕКОРАТОР @property позволяет работать с методом некоторого класса как с атрибутом
 
@@ -166,7 +166,7 @@ r.add_win_door(2, 2)
 print(r.common_square())
 
 
-print(f'\n', 30 * '=', f'\n')
+print(f'\n', 30 * '=', f'\n')   # ===================================================
 # виртуальная модель образовательного процесса
 
 
@@ -211,3 +211,60 @@ print(f"{p_1}; {p_2}; {p_3}")
 t.to_teach(s, p_1, p_2, p_3)
 print(p_1.knowledges[0].my_list())
 
+print(f'\n', 30 * '=', f'\n')   # ===================================================
+
+# Программа для отслеживания преподавателей и студентов
+# У них есть общие хаактеристики: имя, возраст, адресю
+# Специфические:
+#  - преподаватели: зарплата, курсы, отпуск
+#  - студенты: оценки, оплата за обучение.
+
+
+class SchoolMember:
+    """Представляет любого человека в школе."""
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        print('(Создан SchoolMember: {0})'.format(self.name))
+
+    def tell(self):
+        """Вывести информацию."""
+        print('Имя:"{0}" Возраст:"{1}"'.format(self.name, self.age), end=" ")
+
+
+class Teacher(SchoolMember):
+    """Представляет преподавателя."""
+    def __init__(self, name, age, salary):
+        SchoolMember.__init__(self, name, age)
+        self.salary = salary
+        print('(Создан Teacher: {0})'.format(self.name))
+
+    def tell(self):
+        SchoolMember.tell(self) # <-------------------------|
+        print('Зарплата: "{0:d}"'.format(self.salary))  #   |
+"""Обратите внимание, что при вызове метода tell из класса SchoolMember экземпляры
+Teacher или Student можно использовать как экземпляры SchoolMember.
+Заметьте также, что вызывается метод tell из подкласса, а не метод tell из класса
+SchoolMember. Это можно понять следующим образом: Python всегда начинает поиск методов 
+в самом классе, что он и делает в данном случае. Если же он не находит метода, он 
+начинает искать методы, принадлежащие базовым классам по очереди, в порядке, в котором
+они перечислены в кортеже при определении класса."""
+
+class Student(SchoolMember):
+    """Представляет студента."""
+    def __init__(self, name, age, marks):
+        SchoolMember.__init__(self, name, age)
+        self.marks = marks
+        print('(Создан Student: {0})'.format(self.name))
+
+    def tell(self):
+        SchoolMember.tell(self)
+        print('Оценки: "{0:d}"'.format(self.marks))
+
+
+t = Teacher('Mrs. Shrividya', 40, 30000)
+s = Student('Swaroop', 25, 75)
+print()  # печатает пустую строку
+members = [t, s]
+for member in members:
+    member.tell()  # работает как для преподавателя, так и для студента

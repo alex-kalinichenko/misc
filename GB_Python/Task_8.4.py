@@ -1,4 +1,4 @@
-# 4) Начните работу над проектом «Склад оргтехники». Создайте класс, описывающий склад.
+# 4. Начните работу над проектом «Склад оргтехники». Создайте класс, описывающий склад.
 # А также класс «Оргтехника», который будет базовым для классов-наследников. Эти классы
 # — конкретные типы оргтехники (принтер, сканер, ксерокс). В базовом классе определить
 # параметры, общие для приведенных типов. В классах-наследниках реализовать параметры,
@@ -13,20 +13,76 @@
 # Подсказка: постарайтесь по возможности реализовать в проекте «Склад оргтехники» максимум
 # возможностей, изученных на уроках по ООП.
 
+eq_dict = {"model":}
 
-class Store
-    def __init__(self):
+class Store:
+    equipment_num = 0
 
-class Equipment(Store):
-    def __init__(self, brand, model quantity):
-        self.name = name
+    def __init__(self, brand, model, quantity):
+        self.brand = brand
+        self.model = model
         self.quantity = quantity
 
+
+class Equipment(Store):
+    # def __init__(self):
+    pass
+
+
 class Printer(Equipment):
-    def __init(self, brand, model, black_color):
+    printer_num = 0
 
-class Scaner(Equipment):
-    def __init__(self, brand, model, network, room):
+    def __init__(self, black_color):
+        self.black_color = black_color
+        super().__init__(self)
 
-class Xerox(Equipment):
-    def __abs__(self, brand, model, room):
+
+class Scanner(Equipment):
+    scanner_num = 0
+
+    def __init__(self, network, room):
+        self.network = network
+        self.room = room
+        super().__init__()
+
+
+class Phone(Equipment):
+    phone_num = 0
+
+    def __init__(self, user):
+        self.user = user
+        super().__init__(self)
+
+printer_1 = Printer('HP', 'LaseJet-1020', 10)
+
+el_list = []
+
+while True:
+    in_out = input('Введите 1 для приёма оргтехники на сколад и 2 для поставки в компанию: ')
+    if in_out == '1' or '2':
+
+    else
+        break
+
+
+
+
+while True:
+    try:
+        in_out = input('Введите 1 для приёма оргтехники на сколад и 2 для поставки в компанию: ')
+        if in_out == '1' or '2':
+            print(f'Работа скрипта остановлена. Сформирован список: {el_list}')
+            break
+        elif not el.isdigit():
+            raise NumCheck("Вы ввели не число")
+        # код который может вызвать исключительную ситуацию
+    except NumCheck as err:
+        print(err)
+        # что делать если возникла исключительная ситуация
+    else:
+        el = int(el)
+        el_list.append(el)
+        # что делать если ошибок не было
+    # finally:
+    # выполняется всегда
+
