@@ -35,6 +35,16 @@ class Printer(Equipment):
         self.black_color = black_color
         super().__init__(brand, model, quantity)
 
+    def get_printer(self, brand, model, quantity, black_color):
+        self.black_color = black_color
+        super().__init__(brand, model, quantity)
+        printer_num += 1
+
+    def take_printer(self, brand, model, quantity, black_color):
+        self.black_color = black_color
+        super().__init__(brand, model, quantity)
+        printer_num += 1
+        print(printer_params)
 
 class Scanner(Equipment):
     scanner_num = 0
