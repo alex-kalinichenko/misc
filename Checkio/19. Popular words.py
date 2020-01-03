@@ -10,21 +10,21 @@
 # Output: The dictionary where the search words are the keys and values are the number of times
 # when those words are occurring in a given text.
 
-# Начал 23:00
+# Вреия 70 мин. Определение частоты вхождения заданного набора слов в фразе
+
 
 def popular_words(text: str, words: list) -> dict:
-    words_list = text.lower.split()
-    print(words_list)
+    text_list = text.lower().split()
+    pop_dict = {}
     for word in words:
+        pop_dict[word] = text_list.count(word)
+    return pop_dict
 
 
-    return None
-
-
-print(popular_words('When I was One'
-                    'I had just begun'
-                    'When I was Two'
-                    'I was nearly new', ['i', 'was', 'three', 'near']))
+print(popular_words('''When I was On
+                       I had just begun
+                       When I was Two
+                       I was nearly new''', ['i', 'was', 'three', 'near']))
 
 """
 popular_words('''
