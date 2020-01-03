@@ -15,39 +15,21 @@ bigger_price(2, [
     {"name": "wine", "price": 138},
     {"name": "meat", "price": 15},
     {"name": "water", "price": 1}
-]) == [
-    {"name": "wine", "price": 138},
-    {"name": "bread", "price": 100}
-]                                             '''
+]) == [{"name": "wine", "price": 138},
+       {"name": "bread", "price": 100}] '''
+
+# Заняло 3 часа
 
 def bigger_price(limit: int, data: list) -> list:
-    top_items = []
-    item = []
-    for i in range(limit):
-        price = 0
-        print("i=", 1)
-        for dict in data:
-            print(dict)
-            list = []
-            for v in dict.values():
-                #print(v)
-                list.append(v)
-            #print("list = ", list)
-            if int(list[1]) > price:
-                price = int(list[1])
-                item = list[0]
-            print("The most expensive item is: ", item, "for", price, "$")
-        top_items.append(item)
-        print("top items", top_items)
+    return sorted(data, key=lambda item: item['price'], reverse=True)[0:limit]
 
 
 
-
-# print(bigger_price(2, [
-#     {"name": "bread", "price": 100},
-#     {"name": "wine", "price": 138},
-#     {"name": "meat", "price": 15},
-#     {"name": "water", "price": 1}  ]))
+print(bigger_price(2, [
+    {"name": "bread", "price": 100},
+    {"name": "wine", "price": 138},
+    {"name": "meat", "price": 15},
+    {"name": "water", "price": 1}  ]))
 
 
 #  auto-testing
