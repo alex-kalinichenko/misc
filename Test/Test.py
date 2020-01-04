@@ -23,3 +23,4 @@ pop_words_list = pop_words.lower().split()
 print(pop_words_list)
 for word in pop_words_list:
     print(word, pop_words.count(word))
+
