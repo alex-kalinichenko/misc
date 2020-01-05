@@ -14,8 +14,8 @@ from typing import List, Any
 
 
 def all_the_same(elements: List[Any]) -> bool:
-    # print(elements[1:])
-    # print(elements[:-1])
+    print(elements[1:])
+    print(elements[:-1])
     return elements[1:] == elements[:-1]
 
 
