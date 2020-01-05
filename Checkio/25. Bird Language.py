@@ -54,12 +54,17 @@ def translate(phrase):
             i += 1
         elif el in VOWELS and el == phrase[i + 1]:
             i += 1
+        elif el is phrase[-1] and el not in VOWELS:
+            word_str += el
         else:
             word_str += el
             i += 1
-    print(word_str)
+    return word_str
 
 print(translate("hoooowe yyyooouuu duoooiiine"))
+print(translate("hieeelalaooo"))
+print(translate("aaa bo cy da eee fe"))
+print(translate("sooooso aaaaaaaaa"))
 
 print(2 * '\n')
 
