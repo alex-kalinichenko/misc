@@ -5,3 +5,6 @@ for x, y in list1:
     print(x, y)
 
 print('32 бита - 2^32 =', 2**32)
+
+s = 123
+print(str(s).split())
