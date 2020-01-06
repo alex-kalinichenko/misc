@@ -6,5 +6,10 @@ for x, y in list1:
 
 print('32 бита - 2^32 =', 2**32)
 
-s = 123
-print(str(s).split())
+x = 123454321
+str_x = str(x)
+lenght = int(len(str(x)))
+half_lenght = int(lenght / 2)
+print(str_x[:half_lenght])
+print(str_x[:half_lenght:-1])
+print(int(7/2))
