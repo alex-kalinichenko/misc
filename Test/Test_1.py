@@ -3,3 +3,5 @@ print(list1[4][0])
 print(list1[5][1])
 for x, y in list1:
     print(x, y)
+
+print('32 бита - 2^32 =', 2**32)
