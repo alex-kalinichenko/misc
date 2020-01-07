@@ -13,7 +13,8 @@ class Solution:
         """
         Do not return anything, modify s in-place instead.
         """
-        s[:] = s[::-1]
+        s[:] = s[::-1] # Runtime: 212 ms, faster than 70.40% Memory: 17.5 MB, less than 88.37%
+        s.reverse() # Runtime: 212 ms, faster than 70.40%. Memory: 17.3 MB, less than 97.67%
         print(s)
 
 

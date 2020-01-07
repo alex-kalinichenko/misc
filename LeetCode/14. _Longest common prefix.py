@@ -5,7 +5,7 @@
 # Explanation: There is no common prefix among the input strings.
 # Note: All given inputs are in lowercase letters a-z.
 
-# Start 19:00
+# Time: 2 hours. Not finished
 
 class Solution:
     def longestCommonPrefix(self, strs) -> str:
