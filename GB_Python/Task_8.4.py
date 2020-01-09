@@ -3,17 +3,8 @@
 # — конкретные типы оргтехники (принтер, сканер, ксерокс). В базовом классе определить
 # параметры, общие для приведенных типов. В классах-наследниках реализовать параметры,
 # уникальные для каждого типа оргтехники.
-# 5. Продолжить работу над первым заданием. Разработать методы, отвечающие за приём
-# оргтехники на склад и передачу в определенное подразделение компании. Для хранения
-# данных о наименовании и количестве единиц оргтехники, а также других данных, можно
-# использовать любую подходящую структуру, например словарь.
-# 6. Продолжить работу над вторым заданием. Реализуйте механизм валидации вводимых
-# пользователем данных. Например, для указания количества принтеров, отправленных на склад,
-# нельзя использовать строковый тип данных.
-# Подсказка: постарайтесь по возможности реализовать в проекте «Склад оргтехники» максимум
-# возможностей, изученных на уроках по ООП.
 
-eq_dict = {"model":}
+
 
 class Store:
     equipment_num = 0
@@ -32,57 +23,26 @@ class Equipment(Store):
 class Printer(Equipment):
     printer_num = 0
 
-    def __init__(self, black_color):
+    def __init__(self, brand, model, quantity, black_color):
         self.black_color = black_color
-        super().__init__(self)
+        super().__init__(brand, model, quantity)
 
 
 class Scanner(Equipment):
     scanner_num = 0
 
-    def __init__(self, network, room):
+    def __init__(self, brand, model, quantity, network):
         self.network = network
         self.room = room
-        super().__init__()
+        super().__init__(brand, model, quantity)
 
 
 class Phone(Equipment):
     phone_num = 0
 
-    def __init__(self, user):
+    def __init__(self, brand, model, quantity, user):
         self.user = user
-        super().__init__(self)
-
-printer_1 = Printer('HP', 'LaseJet-1020', 10)
-
-el_list = []
-
-while True:
-    in_out = input('Введите 1 для приёма оргтехники на сколад и 2 для поставки в компанию: ')
-    if in_out == '1' or '2':
-
-    else
-        break
+        super().__init__(brand, model, quantity)
 
 
-
-
-while True:
-    try:
-        in_out = input('Введите 1 для приёма оргтехники на сколад и 2 для поставки в компанию: ')
-        if in_out == '1' or '2':
-            print(f'Работа скрипта остановлена. Сформирован список: {el_list}')
-            break
-        elif not el.isdigit():
-            raise NumCheck("Вы ввели не число")
-        # код который может вызвать исключительную ситуацию
-    except NumCheck as err:
-        print(err)
-        # что делать если возникла исключительная ситуация
-    else:
-        el = int(el)
-        el_list.append(el)
-        # что делать если ошибок не было
-    # finally:
-    # выполняется всегда
 
