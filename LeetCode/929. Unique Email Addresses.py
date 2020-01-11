@@ -14,8 +14,7 @@
 # different addresses actually receive mails?
 # Example 1:
 # Input: ["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com",
-# "testemail+david@lee.tcode.com"]
-# Output: 2
+# "testemail+david@lee.tcode.com"]  Output: 2
 # Explanation: "testemail@leetcode.com" and "testemail@lee.tcode.com" actually receive mails
 # Note:
 # 1 <= emails[i].length <= 100
@@ -24,6 +23,22 @@
 # All local and domain names are non-empty.
 # Local names do not start with a '+' character.
 
+# time 3 hour
 
 class Solution:
-    def numUniqueEmails(self, emails: List[str]) -> int:
+    def numUniqueEmails(self, emails) -> int:
+        email_set = set()
+        for email in emails:
+            email_set.add(email[:(min(email.find('+'), email.find('@')) if email.find('+') != -1 else
+                          email.find('@'))].replace('.', '') + email[email.find('@'):])
+            """  срез адреса до символа который встретиться раньше + или @. 
+            условие => проверка что находится '+' и не возвращается -1
+            Удаление точек + доменная часть после @ как есть"""
+            print(email_set)
+        return len(email_set)
+
+
+print(Solution().numUniqueEmails(["test.email+alex@leetcode.com",
+                                  "test.e.mail+bob.cathy@leetcode.com",
+                                  "testemail+david@lee.tcode.com"]))
+print(Solution().numUniqueEmails(["test.email+alex@leetcode.com", "test.email@leetcode.com"]))
