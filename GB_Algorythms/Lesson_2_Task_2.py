@@ -3,18 +3,12 @@
 
 x = input('Введите натуральное число: ')
 number = str(x)
-odd = []
 odd_num = 0
-even = []
 even_num = 0
 for digit in number:
     if int(digit) % 2 == 0:
-        odd.append(digit)
         odd_num += 1
     else:
-        even.append(digit)
         even_num += 1
-print(f'Количество чётных цифр = {odd_num}, Это цифры {odd}')
-print(f'Количество нечётных цифр = {even_num}, Это цифры {even}')
-
-Избегать создания листов!!!!
+print(f'Количество чётных цифр = {odd_num}')
+print(f'Количество нечётных цифр = {even_num}')
