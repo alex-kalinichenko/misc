@@ -1,1 +1,1 @@
-cmd "C:\Program Files (x86)\Python37-32\python.exe" "C:\Users\Alexx\Documents\IT\PycharmProjects\Misc\CodeCounter\CodeCounter.py" > output.log 2>&1
+"C:\Program Files (x86)\Python37-32\python.exe" "C:\Users\Alexx\Documents\IT\PycharmProjects\Misc\CodeCounter\CodeCounter.py"
