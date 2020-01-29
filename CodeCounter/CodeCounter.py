@@ -15,7 +15,8 @@ print(line_num)
 # print(datetime.today().date())
 # print(datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S"))
 try:
-    with open("CodeCounter.txt", "a", encoding="utf-8") as file_output:
+    with open(r"C:\Users\Alexx\Documents\IT\PycharmProjects\Misc\CodeCounter\CodeCounter.txt",
+              "a", encoding="utf-8") as file_output:
         file_output.write(str(line_num) + ' ' +
                           str(datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S"))
                           + '\n')

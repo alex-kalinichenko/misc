@@ -2,3 +2,4 @@
 venv
 CodeCounter/CodeCounter.bat
 CodeCounter/CodeCounter.txt
+__pycache__
