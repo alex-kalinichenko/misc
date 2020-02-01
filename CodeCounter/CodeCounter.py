@@ -10,7 +10,7 @@ for root, dirs, files in os.walk(r"C:\Users\Alexx\Documents\IT\PycharmProjects\M
                 for line in file_obj:
                     if not line.startswith("#") or line.startswith('"'):
                         line_num += 1
-print(line_num)
+#print(line_num)
 # print(datetime.today())
 # print(datetime.today().date())
 # print(datetime.strftime(datetime.now(), "%Y.%m.%d %H:%M:%S"))
