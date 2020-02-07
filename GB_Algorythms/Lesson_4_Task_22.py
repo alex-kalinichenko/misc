@@ -6,42 +6,60 @@
 # является составным. Если ни одного такого делителя не находится, то число
 # признается простым.
 
-# https://younglinux.info/algorithm/divider
+# 2 3 5 7 11 13 17 19 23 29 31
+# 1 2 3 4 5  6  7  8  9  10 11
 
-def prime(kol_vo_prostyh):
-    tek_prostoe = 2
-    por_no_tek_prostogo = 1
-    proveryaemoe_chislo = 3
-
-    while por_no_tek_prostogo < kol_vo_prostyh:
-        is_prime = True
-        for divider in range(2, int(proveryaemoe_chislo ** 0.5)):  # соптимизировать корень
-            print(proveryaemoe_chislo)
-            print(divider)
-            if proveryaemoe_chislo / divider != 0:
-                is_prime = False
-                break
-        if is_prime is True:
-            por_no_tek_prostogo += 1
-            tek_prostoe += 1
-        proveryaemoe_chislo += 1
-    return tek_prostoe
+import cProfile
 
 
-#print(prime(5))
+def is_prime(n):
+    for j in range(3, int(n**0.5) + 1):
+        if n % j == 0:
+            return 0
+    return 1
 
 
-def prime_check(number):
-    for divider in range(2, int(number ** 0.5)):  # соптимизировать корень
-        print(int(number ** 0.5))
-        print(number)
-        print(divider)
-        if number / divider != 0:
-            print("Не простое")
-            break
-    print("Простое")
-    return None
+def search(n):
+    prime = 2
+    no_prime = 1
+    prov_ch = 3
+    while no_prime < n:
+        if is_prime(prov_ch) == 1:
+            prime = prov_ch
+            no_prime += 1
+        prov_ch += 2
+    return prime
 
 
-print(prime_check(16))
+# cProfile.run('search(10)')
+# 14    0.000    0.000    0.000    0.000 Lesson_4_Task_22.py:15(is_prime)
+
+# cProfile.run('search(100)')
+# 270    0.000    0.000    0.000    0.000 Lesson_4_Task_22.py:15(is_prime)
+
+# cProfile.run('search(500)')
+# 1785    0.002    0.000    0.002    0.000 Lesson_4_Task_22.py:15(is_prime)
+
+# cProfile.run('search(1000)')
+# 3959    0.006    0.000    0.006    0.000 Lesson_4_Task_22.py:15(is_prime)
+
+# cProfile.run('search(10000)')
+# 52364    0.164    0.000    0.164    0.000 Lesson_4_Task_22.py:15(is_prime)
+
+# print(search(9))
+
+# "Lesson_4_Task_22.search(10)"
+# 100 loops, best of 5: 10.8 usec per loop
+
+# "Lesson_4_Task_22.search(100)"
+# 100 loops, best of 5: 277 usec per loop
+
+# "Lesson_4_Task_22.search(500)"
+# 100 loops, best of 5: 2.46 msec per loop
+
+# "Lesson_4_Task_22.search(1000)"
+# 100 loops, best of 5: 6.43 msec per loop
+
+# "Lesson_4_Task_22.search(10000)"
+# 100 loops, best of 5: 170 msec per loop
 
