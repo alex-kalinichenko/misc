@@ -15,20 +15,25 @@
 # sys.getsizeof после каждой переменной, а проявили творчество, фантазию и
 # создали универсальный код для замера памяти.
 
+# Задача № 1 из Урока 3.
 # 1. В диапазоне натуральных чисел от 2 до 99 определить, сколько из них
 # кратны каждому из чисел в диапазоне от 2 до 9. Примечание: 8 разных ответов.
 
 import sys
 
-list_1 = [] * 8
+print(sys.version, sys.platform)
+
+dict1 = {}
 for i in range(2, 10):
     count = 0
     for number in range(2, 100):
         if number % i == 0:
             count += 1
-    list_1.append([i, count])
-for i in list_1:
-    print(f'Числу {i[0]} кратны {i[1]} чисел')
+    dict1.update({i: count})
+for key, value in dict1.items():
+    print(f'Числу {key} кратны {value} чисел')
+
+print('=' * 20, '\n')
 
 
 def show_size_orig(x, level=0):
@@ -42,8 +47,9 @@ def show_size_orig(x, level=0):
                 show_size_orig(xx, level + 1)
 
 
-show_size_orig(list_1)
+show_size_orig(dict1)
 print('=' * 20, '\n')
+
 
 def show_size(x, level=0):   # level - для красивого вывода значений на экран
     result_size = sys.getsizeof(x)
@@ -59,8 +65,26 @@ def show_size(x, level=0):   # level - для красивого вывода з
     return result_size
 
 
-print(show_size(list_1))
+print(f'Объект dict1 занимает {show_size(dict1)} байт')
 
 
+# 3.7.4 (default, Aug  9 2019, 18:34:13) [MSC v.1915 64 bit (AMD64)] win32
 
-
+#  type = <class 'dict'>, size = 368, object = {2: 49, 3: 33, 4: 24, 5: 19, 6: 16, 7: 14, 8: 12, 9: 11}
+# 	 type = <class 'int'>, size = 28, object = 2
+# 	 type = <class 'int'>, size = 28, object = 49
+# 	 type = <class 'int'>, size = 28, object = 3
+# 	 type = <class 'int'>, size = 28, object = 33
+# 	 type = <class 'int'>, size = 28, object = 4
+# 	 type = <class 'int'>, size = 28, object = 24
+# 	 type = <class 'int'>, size = 28, object = 5
+# 	 type = <class 'int'>, size = 28, object = 19
+# 	 type = <class 'int'>, size = 28, object = 6
+# 	 type = <class 'int'>, size = 28, object = 16
+# 	 type = <class 'int'>, size = 28, object = 7
+# 	 type = <class 'int'>, size = 28, object = 14
+# 	 type = <class 'int'>, size = 28, object = 8
+# 	 type = <class 'int'>, size = 28, object = 12
+# 	 type = <class 'int'>, size = 28, object = 9
+# 	 type = <class 'int'>, size = 28, object = 11
+# Объект dict1 занимает 816 байт

@@ -15,48 +15,26 @@
 # sys.getsizeof после каждой переменной, а проявили творчество, фантазию и
 # создали универсальный код для замера памяти.
 
+# Задача № 1 из Урока 3.
 # 1. В диапазоне натуральных чисел от 2 до 99 определить, сколько из них
 # кратны каждому из чисел в диапазоне от 2 до 9. Примечание: 8 разных ответов.
 
-#  type = <class 'list'>, size = 128, object = [[2, 49], [3, 33], [4, 24], [5, 19], [6, 16], [7, 14], [8, 12], [9, 11]]
-# 	 type = <class 'list'>, size = 80, object = [2, 49]
-# 		 type = <class 'int'>, size = 28, object = 2
-# 		 type = <class 'int'>, size = 28, object = 49
-# 	 type = <class 'list'>, size = 80, object = [3, 33]
-# 		 type = <class 'int'>, size = 28, object = 3
-# 		 type = <class 'int'>, size = 28, object = 33
-# 	 type = <class 'list'>, size = 80, object = [4, 24]
-# 		 type = <class 'int'>, size = 28, object = 4
-# 		 type = <class 'int'>, size = 28, object = 24
-# 	 type = <class 'list'>, size = 80, object = [5, 19]
-# 		 type = <class 'int'>, size = 28, object = 5
-# 		 type = <class 'int'>, size = 28, object = 19
-# 	 type = <class 'list'>, size = 80, object = [6, 16]
-# 		 type = <class 'int'>, size = 28, object = 6
-# 		 type = <class 'int'>, size = 28, object = 16
-# 	 type = <class 'list'>, size = 80, object = [7, 14]
-# 		 type = <class 'int'>, size = 28, object = 7
-# 		 type = <class 'int'>, size = 28, object = 14
-# 	 type = <class 'list'>, size = 80, object = [8, 12]
-# 		 type = <class 'int'>, size = 28, object = 8
-# 		 type = <class 'int'>, size = 28, object = 12
-# 	 type = <class 'list'>, size = 80, object = [9, 11]
-# 		 type = <class 'int'>, size = 28, object = 9
-# 		 type = <class 'int'>, size = 28, object = 11
-# 1216
 
 import sys
 
-dict1 = {}
+print(sys.version, sys.platform)
+
+list1 = []
 for i in range(2, 10):
     count = 0
     for number in range(2, 100):
         if number % i == 0:
             count += 1
-    dict1.update({i: count})
-    #print(dict1)
-for key, value in dict1.items():
-    print(f'Числу {key} кратны {value} чисел')
+    list1.insert(0, i)
+    list1.insert(1, count)
+    print(f'Числу {list1.pop(0)} кратны {list1.pop(0)} чисел')
+
+print('=' * 20, '\n')
 
 
 def show_size_orig(x, level=0):
@@ -70,8 +48,9 @@ def show_size_orig(x, level=0):
                 show_size_orig(xx, level + 1)
 
 
-show_size_orig(dict1)
+show_size_orig(list1)
 print('=' * 20, '\n')
+
 
 def show_size(x, level=0):   # level - для красивого вывода значений на экран
     result_size = sys.getsizeof(x)
@@ -87,8 +66,17 @@ def show_size(x, level=0):   # level - для красивого вывода з
     return result_size
 
 
-print(show_size(dict1))
+print(f'Объект list1 занимает {show_size(list1)} байт')
 
+# 3.7.4 (default, Aug  9 2019, 18:34:13) [MSC v.1915 64 bit (AMD64)] win32
 
+#  type = <class 'list'>, size = 64, object = []
+# Объект list1 занимает 64 байт
 
-
+# ОБЩИЙ ВЫВОД
+# В 1-м варианте используется список списков размерностью 2х8. Соответсвенно
+# для хранения результатов выделяется 1216 байт.
+# 2-й вариант использует словарь под который выделяется 816 байт.
+# 3-й вариант кода является наилучшим, т.к. для хранения результатов
+# используется список из двух элементов. При каждой итерации элементы
+# перезатираются. 3-й вариант использует 64 байта памяти.
