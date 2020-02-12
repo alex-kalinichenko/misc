@@ -1,1 +1,1 @@
-# miscellaneous projects
+# Miscellaneous projects
