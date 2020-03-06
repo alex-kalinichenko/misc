@@ -1,18 +1,21 @@
-# 2. Закодируйте любую строку по алгоритму Хаффмана.
-# https://github.com/elluscinia/smoothsort/wiki/Восхваление-heapq.-О-Кучах
+'''2. Закодируйте любую строку по алгоритму Хаффмана.'''
+
 
 import heapq
-from collections import Counter, namedtuple
+from collections import Counter
+from collections import namedtuple
 
 
 class Node(namedtuple("Node", ["left", "right"])):
     def walk(self, code, acc):
+
         self.left.walk(code, acc + "0")
         self.right.walk(code, acc + "1")
 
 
 class Leaf(namedtuple("Leaf", ["char"])):
     def walk(self, code, acc):
+
         code[self.char] = acc or "0"
 
 
@@ -34,14 +37,12 @@ def huffman_encode(s):
     return code
 
 
-# s = input("Введите строку для кодировки: ")
-s = 'beep boop beer!'
-code = huffman_encode(s)
-encoded = "".join(code[ch] for ch in s)
+def main():
+    s = input('Введите строку: ')
+    code = huffman_encode(s)
+    encoded = "".join(code[ch] for ch in s)
+    print(f'Строка после кодирвания: {encoded}')
 
-# print('Кол-во символов: ', len(code))
-# print('Кол-во символов в закодированной строке: ', len(encoded))
-
-for ch in sorted(code):
-    print("{}: {}".format(ch, code[ch]))
-print('Закодированная строка: ', encoded)
+    
+if __name__ == "__main__":
+    main()

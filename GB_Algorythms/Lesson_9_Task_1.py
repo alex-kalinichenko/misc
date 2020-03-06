@@ -45,6 +45,7 @@ def hash_count(string):
     return len(sub_string_set)
 
 
-s = 'Hello world'
+# s = 'Hello world'
+s = input('Введите строку: ')
 print(hash_count(s))
 
