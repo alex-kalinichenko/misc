@@ -1,0 +1,13 @@
+/*http://css-tricks.com*/
+a img, img {border: none;}
+.photo-link { padding: 3px; padding-bottom: 0px; margin: 0px; border: 1px solid #999; display: block; width: 150px;
+              float: left; -moz-border-radius:4px; -webkit-border-radius:6px; border-radius:4px;}
+.photo-link:hover {border-color: white;}
+
+.previous {position: absolute; left:260px; top:67px;}
+.back_portfolio {position: absolute; left:440px; top:67px;}
+.next     {position: absolute; left:600px; top:67px;}
+
+.previous_bottom {position: absolute; left:260px;}
+.back_portfolio_bottom {position: absolute; left:440px;}
+.next_bottom     {position: absolute; left:600px;}

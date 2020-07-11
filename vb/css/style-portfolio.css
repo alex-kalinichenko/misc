@@ -1,0 +1,84 @@
+* {	margin: 0; padding: 0;}
+html { height: 100%;}
+body { font: 12px Arial, Tahoma, Verdana, sans-serif; color: white; background-color: black; height: 100%; text-align:justify;}
+a {	color: steelblue; outline: none; text-decoration: underline;} /* color: cornflowerblue*/
+a:hover { text-decoration: none;}
+p {	margin: 0 0 10px;}
+img { border: none;}
+input {	vertical-align: middle;}
+
+#wrapper {width: 100%; min-width: 1100px; min-height: 100%; height: auto !important; height: 100%;}
+#wrapper_index {width: 100%; min-width: 1100px; min-height:100%; height: auto !important; height: 100%;
+    background-image: url("../images/background_0.jpg"); background-repeat: no-repeat; background-position: 300px 70px;}
+/* Header
+-----------------------------------------------------------------------------*/
+#header { height: 170px;}
+#header1 {position:absolute; top:72px; left:74px;  font: normal normal 2.3em Arial, Verdana, sans-serif; color:white; text-decoration:none;}	
+#header2 {position:absolute; top:105px;left:100px; font: normal normal 1.6em Arial, Verdana, sans-serif; color:white; text-decoration:none;}
+
+#menu {position:absolute; top:114px;left: 514px; min-width:434px; height:50px; text-align:center; font-weight:bold;}
+#menu a {text-decoration: none; font:bold normal 1.25em Arial, Verdana, sans-serif; color: white;}
+
+/*по событию mouseover подсвечиваем*/
+#menu a:hover { background-color: white; color:black;}
+
+/*ОПИСАНИЕ МЕНЮ*/
+.home      { position:absolute; left: 0px;   width: 70px; height: 23px;}
+.about     { position:absolute; left: 71px;  width: 70px; height: 23px;}
+.portfolio { position:absolute; left: 142px; width: 95px; height: 23px;}
+.video     { position:absolute; left: 238px; width: 58px; height: 23px;}
+.article   { position:absolute; left: 297px; width: 58px; height: 23px;}
+.review    { position:absolute; left: 356px; width: 70px; height: 23px;}
+.price     { position:absolute; left: 427px; width: 50px; height: 23px;}
+.contact   { position:absolute; left: 478px; width: 78px; height: 23px;}
+/*#ОПИСАНИЕ МЕНЮ*/
+/*горизонтальная линия*/
+#hor_line { position:absolute; top: 125px; left: 70px;}
+
+/* Middle-----------------------------------------------------------------------------*/
+#middle { width: 100%; padding: 0 0 100px; height: 1%; position: relative;}
+#middle:after {	content: '.'; display: block; clear: both; visibility: hidden; height: 0;}
+#container { width: 100%; float: left; overflow: hidden;}
+#content { padding: 0 0 0 1088px; }
+
+/* Sidebar Left-----------------------------------------------------------------------------*/
+#sideLeft {	float: left; width: 70px; margin-left: -100%; position: relative;}
+
+/* Sidebar Right-----------------------------------------------------------------------------*/
+#sideRight {float:left; width:998px; margin-left:-100%; left:70px; position:relative; margin-right:-3px;}
+
+/* Footer-----------------------------------------------------------------------------*/
+#footer {margin:-100px auto 0; min-width:1100px; height:100px; position:relative;}
+#citation {position:absolute; left:50px; bottom:9px; width: 300px; font: normal normal 9px Arial, Verdana, sans-serif; line-height:1.5; text-align:justify;}
+#copyright {position:absolute; left:485px; top:40px; font: normal normal 9px Arial, Verdana, sans-serif; color: #999999; line-height:0.2; text-align:center; }
+/*top right bottom left*/
+
+/*местоположение социальных закладок*/
+#bookmarks { position:absolute; right:12px; bottom:10px; text-align:center;}
+/*устанавливаем прозрачность для социальных закладок*/
+#share42 a       {opacity: 0.5;}
+#share42:hover a {opacity: 0.7;}
+#share42 a:hover {opacity: 1;}
+
+#pic-wed    {position:absolute; top:100px; left:100px;}
+#pic-studio {position:absolute;	top:100px; left:450px;}
+#pic-plener {position:absolute;	top:350px; left:100px;}
+#pic-love   {position:absolute; top:350px; left:450px;}
+
+#border-1 {position:absolute; top:  99px; left: 149px;}
+#border-2 {position:absolute; top:  99px; left: 499px;}
+#border-3 {position:absolute; top: 359px; left: 149px;}
+#border-4 {position:absolute; top: 359px; left: 499px;}
+
+#myGallery1 { width:300px !important; height:225px !important; position:absolute; top: 100px; left: 150px;}
+#myGallery2 { width:300px !important; height:225px !important; position:absolute; top: 100px; left: 500px;}
+#myGallery3 { width:300px !important; height:225px !important; position:absolute; top: 360px; left: 150px;}
+#myGallery4 { width:300px !important; height:225px !important; position:absolute; top: 360px; left: 500px;}
+
+/* м ы л о */
+.foem{display:none;}
+.mfs{visibility:visible;}
+
+#border {position:relative; left:149px; width: 649px; border: 1px dotted white; text-align: center; padding-top:8px;}
+#list {position:relative; left:25px; padding-bottom:20px;}
+#top100 { position:absolute; left:535px; bottom:0px;}
