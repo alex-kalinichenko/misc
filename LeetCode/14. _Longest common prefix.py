@@ -7,25 +7,33 @@
 
 # Time: 2 hours. Not finished
 
+
 class Solution:
     def longestCommonPrefix(self, strs) -> str:
-        strs_len = len(strs)
-        i = 0
+        min_letter_no = len(strs[0])
+        for word in strs:
+            if len(word) < min_letter_no:
+                min_letter_no = len(word)
+        print('min_letter_no =', min_letter_no)
+        # ####
+        word_no = len(strs)
+        print('word_no=', word_no)
+
+
+        letter_pos = 0
+        letter_no = 0
+        word_no = 0
         result = ''
-        for letter in strs[0]:
-            """ буква  i-е слово """
-            print('letter =', letter)
-            for word in strs:
-                """слово  лист слов """
-                print('word =', word)
-                print('word[i] =', word[i])
-                if letter != word[i]:
-                    return ""
+        for letter in strs[word_no][letter_no]:
+            print(letter)
+            for word in strs[word_no]:
+                if letter == strs[1][letter_pos]:
+                    print(letter, 'right!')
+                    letter_pos += 1
+                word_no += 1
+            letter_no += 1
+        return ''
 
-            result += letter
-            print('result =', result)
-            i += 1
-        return result
 
-print(Solution().longestCommonPrefix(["flower","flow","flight"]))
-print(Solution().longestCommonPrefix(["dog","racecar","car"]))
+print(Solution().longestCommonPrefix(["flower", "flow", "flight"]))
+print(Solution().longestCommonPrefix(["dog", "racecar", "car"]))
